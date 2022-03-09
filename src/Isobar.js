@@ -9,11 +9,6 @@ function Isobar({highLabel, lowLabel, titleLabel, colorTable}) {
 
   let isoBarHieght;
 
-
- 
-
-
-
   useEffect(()=>{
 
     const canvas = canvasRef.current;
@@ -49,29 +44,14 @@ function Isobar({highLabel, lowLabel, titleLabel, colorTable}) {
     contextRef.current.rotate( 3 * Math.PI / 2 );
     contextRef.current.textAlign = "right";
 
-    
     contextRef.current.fillStyle = "white"
     contextRef.current.font =  "bold .75em Sans-Serif"
     contextRef.current.scale(1,16)
-    context.lineCap = "round"
-    contextRef.current.lineWidth = 100
     contextRef.current.fillText(highLabel ,(-1*isoBarHieght)/40, 13)
     contextRef.current.fillText(titleLabel ,(-1*isoBarHieght)/3, 13)
     contextRef.current.fillText(lowLabel ,(-1*isoBarHieght)*(16/20), 13)
 
     contextRef.current.restore();
-
-
-
-
-    const update = () => {
-      console.log("hello")
-
-    }
-
-
-
-    update()
 
   },[])
 
